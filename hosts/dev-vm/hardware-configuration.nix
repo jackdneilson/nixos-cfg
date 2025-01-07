@@ -11,6 +11,8 @@
   boot.kernelModules = [ ];
   boot.extraModulePackages = [ ];
 
+  hardware.enableRedistributableFirmware = lib.mkDefault true;
+
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/7107f0b4-67e9-476f-9599-25d6a8f3cc90";
       fsType = "ext4";

@@ -6,15 +6,19 @@
       ./hardware-configuration.nix
     ];
 
+  # Flakes
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   # Bootloader
   boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.configurationLimit = 5;
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Add support for virtualisation
   virtualisation.vmware.guest.enable = true;
 
   # Networking
-  networking.hostName = "lamb"; 
+  networking.hostName = "dev-vm"; 
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;
 
@@ -40,7 +44,6 @@
     desktopManager.xterm.enable = false;
     windowManager.i3.enable = true;
   };
-  services.displayManager.defaultSession = "none+i3";
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -49,7 +52,7 @@
   };
 
   # Enable sound with pipewire
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -75,9 +78,15 @@
     wget
     curl
     git
+    ripgrep
+    fd
+    fzf
+    killall
     ghostty
     firefox
     polybar
+    rofi
+    bitwarden-desktop
   ];
 
   # Programs with Options
@@ -95,15 +104,19 @@
   # Services
   services.picom = {
     enable = true;
+    #backend = "glx";
     shadow = true;
-    inactiveOpacity = 0.3;
+    inactiveOpacity = 0.5;
+    opacityRules = [
+      "100:class_g *?= 'Rofi'"
+    ];
   };
 
   # NixOS
   nix.gc = {
     automatic = true;
     dates = "daily";
-    options = "--delete-older-than +3";
+    options = "--delete-older-than +5";
   };
   nix.settings.auto-optimise-store = true;
   system.stateVersion = "24.11";
