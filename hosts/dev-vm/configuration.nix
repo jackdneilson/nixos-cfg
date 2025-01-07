@@ -87,6 +87,7 @@
     polybar
     rofi
     bitwarden-desktop
+    libreoffice
   ];
 
   # Programs with Options
