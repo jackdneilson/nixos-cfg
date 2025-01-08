@@ -6,6 +6,13 @@
   home.stateVersion = "24.11";
   programs.home-manager.enable = true;
 
+  systemd.user.targets.tray = {
+    Unit = {
+      Description = "Home Manager System Tray";
+      Requires = [ "graphical-session-pre.target" ];
+    };
+  };
+
   programs.git = {
     enable = true;
     userName = "Jack Neilson";
@@ -29,8 +36,16 @@
 
   programs.yazi.enable = true;
 
+  services.polybar = {
+    enable = true;
+    package = pkgs.polybar.override {
+      pulseSupport = true;
+    };
+    script = "polybar bar &";
+    config = ./polybar.ini;
+  };
+
   services.udiskie.enable = true;
-  services.udiskie.tray = "never";
 
   gtk = {
     enable = true;

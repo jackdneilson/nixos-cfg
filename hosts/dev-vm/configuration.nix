@@ -89,11 +89,11 @@
     killall
     ghostty
     firefox
-    polybar
     rofi
     bitwarden-desktop
     libreoffice
     udiskie
+    pavucontrol
   ];
 
   # Programs with Options

@@ -1,6 +1,7 @@
 default_border none
 hide_edge_borders smart
 gaps inner 12px
+exec --no-startup-id "systemctl --user restart polybar.service"
 
 set $mod Mod4
 
@@ -165,6 +166,3 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-
-exec_always --no-startup-id killall -q polybar
-exec_always --no-startup-id polybar &
