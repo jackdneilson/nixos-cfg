@@ -12,6 +12,25 @@
     userEmail = "jackdneilson@gmail.com";
   };
 
+  programs.ghostty = {
+    enable = true;
+    settings = {
+      theme = "carbonfox";
+      window-decoration = "false";
+      background = "#000000";
+    };
+  };
+
+  programs.rofi = {
+    enable = true;
+    theme = ./theme.rasi;
+  };
+
+  programs.yazi.enable = true;
+
+  services.udiskie.enable = true;
+  services.udiskie.tray = "never";
+
   gtk = {
     enable = true;
     theme = {

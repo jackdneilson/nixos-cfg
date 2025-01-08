@@ -93,6 +93,7 @@
     rofi
     bitwarden-desktop
     libreoffice
+    udiskie
   ];
 
   # Programs with Options
@@ -124,4 +125,7 @@
       "100:class_g *?= 'Rofi'"
     ];
   };
+
+  # udisks2 handles (un)mounting disks
+  services.udisks2.enable = true;
 }
