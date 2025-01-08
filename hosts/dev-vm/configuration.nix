@@ -99,6 +99,9 @@
   # dconf required to provide GSettings
   programs.dconf.enable = true;
 
+  # ssh-agent autostart for auth
+  programs.ssh.startAgent = true;
+
   # nvim
   programs.neovim = {
     enable = true;
