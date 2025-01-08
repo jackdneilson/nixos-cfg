@@ -6,8 +6,16 @@
       ./hardware-configuration.nix
     ];
 
-  # Flakes
+  # NixOS Configuration
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nixpkgs.config.allowUnfree = true;
+  nix.gc = {
+    automatic = true;
+    dates = "daily";
+    options = "--delete-older-than +5";
+  };
+  nix.settings.auto-optimise-store = true;
+  system.stateVersion = "24.11";
 
   # Bootloader
   boot.loader.systemd-boot.enable = true;
@@ -69,9 +77,6 @@
     packages = with pkgs; [];
   };
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -91,6 +96,9 @@
   ];
 
   # Programs with Options
+  # dconf required to provide GSettings
+  programs.dconf.enable = true;
+
   # nvim
   programs.neovim = {
     enable = true;
@@ -103,6 +111,7 @@
   ];
 
   # Services
+  # picom is a compositor that allows for transparency and blurring.
   services.picom = {
     enable = true;
     #backend = "glx";
@@ -112,13 +121,4 @@
       "100:class_g *?= 'Rofi'"
     ];
   };
-
-  # NixOS
-  nix.gc = {
-    automatic = true;
-    dates = "daily";
-    options = "--delete-older-than +5";
-  };
-  nix.settings.auto-optimise-store = true;
-  system.stateVersion = "24.11";
 }
