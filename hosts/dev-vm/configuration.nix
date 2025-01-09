@@ -121,11 +121,6 @@
   services.picom = {
     enable = true;
     #backend = "glx";
-    shadow = true;
-    inactiveOpacity = 0.5;
-    opacityRules = [
-      "100:class_g *?= 'Rofi'"
-    ];
   };
 
   # udisks2 handles (un)mounting disks

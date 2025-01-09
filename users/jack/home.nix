@@ -23,8 +23,12 @@
     enable = true;
     settings = {
       theme = "carbonfox";
-      window-decoration = "false";
+      # window-decoration = false;
+      background-opacity = "0.8";
       background = "#000000";
+      gtk-tabs-location = "hidden";
+      gtk-titlebar = false;
+      gtk-adwaita = false;
     };
   };
 

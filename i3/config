@@ -1,11 +1,13 @@
-default_border none
-hide_edge_borders smart
+default_border pixel 2
 gaps inner 12px
+smart_gaps on
+hide_edge_borders smart
 exec --no-startup-id "systemctl --user restart polybar.service"
+client.focused #ffffff #00000000 #ffffff #ffffff #ffffff99  
 
 set $mod Mod4
 
-font pango:JetBrainsMono Nerd Font 12
+font pango:JetBrainsMono Nerd Font 16px
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
