@@ -92,8 +92,10 @@
     rofi
     bitwarden-desktop
     libreoffice
-    udiskie
     pavucontrol
+    spotify
+    spotify-tray
+    udiskie
   ];
 
   # Programs with Options

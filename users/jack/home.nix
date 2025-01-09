@@ -45,7 +45,17 @@
     config = ./polybar.ini;
   };
 
-  services.udiskie.enable = true;
+  services.udiskie = {
+    enable = true;
+    notify = false;
+    tray = "auto";
+    automount = true;
+    settings = {
+      program_options = {
+        file_manager = "${pkgs.ghostty}/bin/ghostty -e yazi";
+      };
+    };
+  };
 
   gtk = {
     enable = true;
