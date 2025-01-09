@@ -106,10 +106,22 @@
   programs.ssh.startAgent = true;
 
   # nvim
-  programs.neovim = {
+  # programs.neovim = {
+  #   enable = true;
+  #   defaultEditor = true;
+  # };
+  # nvim
+  programs.nvf = {
     enable = true;
-    defaultEditor = true;
+    settings = {
+      vim.theme.enable = true;
+      vim.theme.name = "oxocarbon";
+      vim.theme.style = "dark";
+
+      vim.languages.nix.enable = true;
+    };
   };
+  
 
   # Fonts
   fonts.packages = with pkgs; [

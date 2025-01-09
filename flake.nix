@@ -6,13 +6,16 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nvf.url = "github:notashelf/nvf";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... } @inputs: {
+  outputs = { self, nixpkgs, home-manager, nvf, ... } @inputs: {
     nixosConfigurations.dev-vm = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./hosts/dev-vm/configuration.nix
+        nvf.nixosModules.default
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;

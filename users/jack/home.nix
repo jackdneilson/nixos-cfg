@@ -22,13 +22,46 @@
   programs.ghostty = {
     enable = true;
     settings = {
-      theme = "carbonfox";
-      # window-decoration = false;
+      theme = "oxocarbon-dark";
       background-opacity = "0.8";
       background = "#000000";
       gtk-tabs-location = "hidden";
       gtk-titlebar = false;
       gtk-adwaita = false;
+    };
+    themes = {
+      oxocarbon-dark = {
+        background = "161616";
+        foreground = "f2f4f8";
+
+        selection-background = "393939";
+        selection-foreground = "161616";
+
+        palette = [
+          "0=#161616"
+          "1=#3ddbd9"
+          "2=#33b1ff"
+          "3=#ee5396"
+          "4=#42be65"
+          "5=#be95ff"
+          "6=#ff7eb6"
+          "7=#f2f4f8"
+          "8=#525252"
+          "9=#3ddbd9"
+          "10=#33b1ff"
+          "11=#ee5396"
+          "12=#42be65"
+          "13=#be95ff"
+          "14=#ff7eb6"
+          "15=#08bdba"
+          "16=#78a9ff"
+          "17=#82cfff"
+          "18=#262626"
+          "19=#393939"
+          "20=#dde1e6"
+          "21=#ffffff"
+        ];
+      };
     };
   };
 
