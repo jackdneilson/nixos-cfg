@@ -7,20 +7,22 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nvf.url = "github:notashelf/nvf";
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, nvf, ... } @inputs: {
+  outputs = { self, nixpkgs, ... }@inputs: {
     nixosConfigurations.dev-vm = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./hosts/dev-vm/configuration.nix
-        nvf.nixosModules.default
-        home-manager.nixosModules.home-manager {
+        inputs.home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.jack = import ./users/jack/home.nix;
-          # home-manager.extraSpecialArgs = { inherit inputs; };
+          home-manager.extraSpecialArgs = { inherit inputs; };
         }
       ];
     };
