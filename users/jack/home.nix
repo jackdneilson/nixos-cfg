@@ -64,13 +64,67 @@
         key = "<leader>u";
         action = "<cmd>UndotreeToggle<CR>";
       }
+      {
+        mode = "n";
+        key = "<leader>e";
+        action = "<cmd>NvimTreeToggle<CR>";
+      }
+      {
+        mode = "n";
+        key = "<leader>ff";
+        action = "<cmd>Telescope find_files<CR>";
+      }
+      {
+        mode = "n";
+        key = "<leader>fg";
+        action = "<cmd>Telescope live_grep<CR>";
+      }
+      {
+        mode = "n";
+        key = "<leader>fb";
+        action = "<cmd>Telescope buffers<CR>";
+      }
+      {
+        mode = "n";
+        key = "<leader>fv";
+        action = "<cmd>Telescope file_browser<CR>";
+      }
     ];
+    plugins = {
+      lsp = {
+        enable = true;
+        servers = {
+          nixd.enable = true;
+        };
+      };
 
-    plugins.nvim-surround.enable = true;
-    plugins.undotree.enable = true;
-    plugins.telescope = {
-      enable = true;
-      extensions.fzf-native.enable = true;
+      # indent-blankline.enable = true;
+      lz-n.enable = true;
+      nvim-surround.enable = true;
+      undotree.enable = true;
+      web-devicons.enable = true;
+      nvim-autopairs.enable = true;
+      fugitive.enable = true;
+      which-key.enable = true;
+
+      telescope = {
+        enable = true;
+        extensions.fzf-native.enable = true;
+        extensions.file-browser = {
+          enable = true;
+          settings = {
+            hijack_netrw = true;
+          };
+        };
+      };
+
+      treesitter = {
+        enable = true;
+        settings = {
+          highlight.enable = true;
+          indent.enable = true;
+        };
+      };
     };
   };
 

@@ -54,6 +54,7 @@
   services.xserver.xkb = {
     layout = "gb";
     variant = "";
+    options = "caps:escape";
   };
 
   # Enable sound with pipewire
@@ -111,7 +112,7 @@
   # picom is a compositor that allows for transparency and blurring.
   services.picom = {
     enable = true;
-    #backend = "glx";
+    backend = "glx";
   };
 
   # udisks2 handles (un)mounting disks
