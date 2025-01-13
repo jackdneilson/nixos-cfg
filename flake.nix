@@ -13,12 +13,12 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: {
+  outputs = { nixpkgs, home-manager, ... } @inputs: {
     nixosConfigurations.dev-vm = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./hosts/dev-vm/configuration.nix
-        inputs.home-manager.nixosModules.home-manager {
+        home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.jack = import ./users/jack/home.nix;
@@ -31,12 +31,12 @@
       system = "x86_64-linux";
       modules = [
         ./hosts/lamb/configuration.nix
-	inputs.home-manager.nixosModules.home-manager {
-	  home-manager.useGlobalPkgs = true;
-	  home-manager.useUserPackages = true;
-	  home-manager.users.jack = import ./users/jack/home.nix;
-	  home-manager.extraSpecialArgs = { inherit inputs; };
-	}
+	      home-manager.nixosModules.home-manager {
+	        home-manager.useGlobalPkgs = true;
+	        home-manager.useUserPackages = true;
+	        home-manager.users.jack = import ./users/jack/home.nix;
+	        home-manager.extraSpecialArgs = { inherit inputs; };
+	      }
       ];
     };
   };

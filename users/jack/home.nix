@@ -61,6 +61,26 @@
     keymaps = [
       {
         mode = "n";
+        key = "<C-d>";
+        action = "<C-d>zz";
+      }
+      {
+        mode = "n";
+        key = "<C-u>";
+        action = "<C-u>zz";
+      }
+      {
+        mode = "n";
+        key = "n";
+        action = "nzz";
+      }
+      {
+        mode = "n";
+        key = "N";
+        action = "Nzz";
+      }
+      {
+        mode = "n";
         key = "<leader>u";
         action = "<cmd>UndotreeToggle<CR>";
       }
