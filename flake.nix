@@ -18,6 +18,7 @@
       nixosConfigurations.dev-vm = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
+          ./hosts/common.nix
           ./hosts/dev-vm/configuration.nix
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
@@ -31,6 +32,7 @@
       nixosConfigurations.lamb = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
+          ./hosts/common.nix
           ./hosts/lamb/configuration.nix
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
