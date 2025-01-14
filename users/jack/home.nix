@@ -8,8 +8,8 @@
     ../../modules/rofi
     ../../modules/yazi
     ../../modules/polybar
-    # ../../modules/udiskie { inherit pkgs; }
-    # ../../modules/gtk { inherit pkgs; }
+    ../../modules/udiskie
+    ../../modules/gtk
   ];
 
   home.username = "jack";
@@ -23,13 +23,4 @@
       Requires = [ "graphical-session-pre.target" ];
     };
   };
-  
-  # services.polybar = {
-  #   enable = true;
-  #   package = pkgs.polybar.override {
-  #     pulseSupport = true;
-  #   };
-  #   script = "polybar bar &";
-  #   config = ./polybar.ini;
-  # };
 }
