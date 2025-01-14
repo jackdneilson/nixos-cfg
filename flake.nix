@@ -13,31 +13,32 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, ... } @inputs: {
-    nixosConfigurations.dev-vm = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        ./hosts/dev-vm/configuration.nix
-        home-manager.nixosModules.home-manager {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.jack = import ./users/jack/home.nix;
-          home-manager.extraSpecialArgs = { inherit inputs; };
-        }
-      ];
-    };
+  outputs = { nixpkgs, home-manager, nixvim, ... }:
+    {
+      nixosConfigurations.dev-vm = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/dev-vm/configuration.nix
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.jack = import ./users/jack/home.nix;
+            home-manager.sharedModules = [ nixvim.homeManagerModules.nixvim ];
+          }
+        ];
+      };
 
-    nixosConfigurations.lamb = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        ./hosts/lamb/configuration.nix
-	      home-manager.nixosModules.home-manager {
-	        home-manager.useGlobalPkgs = true;
-	        home-manager.useUserPackages = true;
-	        home-manager.users.jack = import ./users/jack/home.nix;
-	        home-manager.extraSpecialArgs = { inherit inputs; };
-	      }
-      ];
+      # nixosConfigurations.lamb = nixpkgs.lib.nixosSystem {
+      #   system = "x86_64-linux";
+      #   modules = [
+      #     ./hosts/lamb/configuration.nix
+      #     home-manager.nixosModules.home-manager {
+      #       home-manager.useGlobalPkgs = true;
+      #       home-manager.useUserPackages = true;
+      #       # home-manager.extraSpecialArgs = { inherit inputs; };
+      #       home-manager.users.jack = import ./users/jack/home.nix;
+      #     }
+      #   ];
+      # };
     };
-  };
 }
