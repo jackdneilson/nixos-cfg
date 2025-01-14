@@ -94,6 +94,7 @@
     spotify
     spotify-tray
     udiskie
+    xclip
   ];
 
   # Programs with Options
