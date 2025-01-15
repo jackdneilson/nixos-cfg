@@ -6,6 +6,7 @@
     colorschemes.nightfox = {
       enable = true;
       flavor = "carbonfox";
+      # settings.palettes.all.bg1 = "#000000";
     };
     opts = import ./options.nix;
     keymaps = import ./keymaps.nix;

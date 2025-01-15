@@ -46,7 +46,12 @@
   }
   {
     mode = "n";
-    key = "<leader>fv";
+    key = "<leader>fr";
     action = "<cmd>Telescope file_browser<CR>";
+  }
+  {
+    mode = "n";
+    key = "<leader>fv";
+    action = "<cmd>Telescope file_browser path=%:p:h select_buffer=true<CR>";
   }
 ]

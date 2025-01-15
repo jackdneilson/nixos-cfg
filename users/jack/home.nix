@@ -2,14 +2,14 @@
 
 {
   imports = [
-    ../../modules/nvim
-    ../../modules/git
-    ../../modules/ghostty
-    ../../modules/rofi
-    ../../modules/yazi
-    ../../modules/polybar
-    ../../modules/udiskie
-    ../../modules/gtk
+    ../../modules/user/nvim
+    ../../modules/user/git
+    ../../modules/user/ghostty
+    ../../modules/user/rofi
+    ../../modules/user/yazi
+    ../../modules/user/polybar
+    ../../modules/user/udiskie
+    ../../modules/user/gtk
   ];
 
   home.username = "jack";
