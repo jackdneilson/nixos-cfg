@@ -7,5 +7,4 @@
   wsl.enable = true;
   wsl.defaultUser = "jack";
 
-  # boot.isContainer = true;  
 }

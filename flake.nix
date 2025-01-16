@@ -39,9 +39,16 @@
       nixosConfigurations.wsl = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
+          ./hosts/common/nix
           ./hosts/common/packages
           ./hosts/wsl/configuration.nix
           nixos-wsl.nixosModules.wsl
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.jack = import ./users/wsl/home.nix;
+            home-manager.sharedModules = [ nixvim.homeManagerModules.nixvim ];
+          }
         ];
       };
 
