@@ -11,4 +11,6 @@
   home.homeDirectory = "/home/jack";
   home.stateVersion = "24.05";
   programs.home-manager.enable = true;
+
+  programs.git.extraConfig.core.autocrlf = true;
 }
