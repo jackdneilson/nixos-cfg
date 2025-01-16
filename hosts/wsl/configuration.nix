@@ -7,4 +7,5 @@
   wsl.enable = true;
   wsl.defaultUser = "jack";
 
+  programs.ssh.startAgent = true;
 }

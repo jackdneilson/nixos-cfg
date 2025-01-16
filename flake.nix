@@ -51,20 +51,5 @@
           }
         ];
       };
-
-      nixosConfigurations.dev-vm = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./hosts/common
-          ./hosts/dev-vm/configuration.nix
-          ./modules/system/i3
-          home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.jack = import ./users/jack/home.nix;
-            home-manager.sharedModules = [ nixvim.homeManagerModules.nixvim ];
-          }
-        ];
-      };
     };
 }
