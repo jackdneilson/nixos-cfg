@@ -1,7 +1,11 @@
 { config, lib, pkgs, ... }:
 
 {
-  wsl.enable = true;
-  wsl.defaultUser = "nixos";
   system.stateVersion = "24.05";
+  networking.hostName = "wsl";
+
+  wsl.enable = true;
+  wsl.defaultUser = "jack";
+
+  # boot.isContainer = true;  
 }
