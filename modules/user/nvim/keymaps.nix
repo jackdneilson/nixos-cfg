@@ -1,5 +1,10 @@
 [
   {
+    mode = "i";
+    key = "<C-c>";
+    action = "<Esc>";
+  }
+  {
     mode = "n";
     key = "<C-d>";
     action = "<C-d>zz";
