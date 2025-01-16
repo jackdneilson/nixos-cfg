@@ -18,7 +18,7 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, nixvim, ... }:
+  outputs = { nixpkgs, home-manager, nixvim, nixos-wsl, ... }:
     {
       nixosConfigurations.lamb = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -41,6 +41,7 @@
         modules = [
           ./hosts/common
           ./hosts/wsl/configuration.nix
+          nixos-wsl.nixosModules.wsl
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
