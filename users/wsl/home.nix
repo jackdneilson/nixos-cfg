@@ -13,4 +13,5 @@
   programs.home-manager.enable = true;
 
   programs.git.extraConfig.core.autocrlf = true;
+  # programs.nixvim.plugins.lsp.servers.delphi_ls.enable = true;
 }

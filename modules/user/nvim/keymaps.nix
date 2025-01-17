@@ -31,11 +31,6 @@
   }
   {
     mode = "n";
-    key = "<leader>e";
-    action = "<cmd>NvimTreeToggle<CR>";
-  }
-  {
-    mode = "n";
     key = "<leader>ff";
     action = "<cmd>Telescope find_files<CR>";
   }
