@@ -47,11 +47,11 @@
   {
     mode = "n";
     key = "<leader>fr";
-    action = "<cmd>Telescope file_browser<CR>";
+    action = "<cmd>Yazi cwd<CR>";
   }
   {
     mode = "n";
     key = "<leader>fv";
-    action = "<cmd>Telescope file_browser path=%:p:h select_buffer=true<CR>";
+    action = "<cmd>Yazi<CR>";
   }
 ]

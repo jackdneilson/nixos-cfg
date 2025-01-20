@@ -18,12 +18,6 @@
   telescope = {
     enable = true;
     extensions.fzf-native.enable = true;
-    extensions.file-browser = {
-      enable = true;
-      settings = {
-        hijack_netrw = true;
-      };
-    };
   };
 
   treesitter = {
@@ -31,6 +25,14 @@
     settings = {
       highlight.enable = true;
       indent.enable = true;
+    };
+  };
+
+  yazi = {
+    enable = true;
+    settings = {
+      enable_mouse_support = true;
+      open_for_directories = true;
     };
   };
 }
