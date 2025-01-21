@@ -1,12 +1,15 @@
 { pkgs, ... }:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    ./hardware-configuration.nix
+  ];
 
   system.stateVersion = "24.11";
+
+  environment.systemPackages = with pkgs; [
+    discord
+  ];
 
   # Bootloader
   boot.loader.systemd-boot.enable = true;
