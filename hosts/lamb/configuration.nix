@@ -16,4 +16,7 @@
   # Networking
   networking.hostName = "lamb"; 
   networking.networkmanager.enable = true;
+
+  # Start the ssh agent on boot
+  programs.ssh.startAgent = true;
 }
