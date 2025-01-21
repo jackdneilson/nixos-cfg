@@ -10,6 +10,7 @@
     ../../modules/user/polybar
     ../../modules/user/udiskie
     ../../modules/user/gtk
+    ../../modules/user/dropbox
   ];
 
   home.username = "jack";

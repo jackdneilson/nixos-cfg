@@ -19,4 +19,12 @@
 
   # Start the ssh agent on boot
   programs.ssh.startAgent = true;
+
+  # Make PDFs open in Firefox
+  xdg.mime = {
+    enable = true;
+    defaultApplications = {
+      "application/pdf" = "firefox.desktop";
+    };
+  };
 }

@@ -3,6 +3,7 @@ gaps inner 12px
 smart_gaps on
 hide_edge_borders smart
 exec --no-startup-id "systemctl --user restart polybar.service"
+exec --no-startup-id "dropbox start"
 client.focused #ffffff #00000000 #ffffff #ffffff #ffffff99  
 bindsym Control+Mod1+L exec --no-startup-id dm-tool lock
 
