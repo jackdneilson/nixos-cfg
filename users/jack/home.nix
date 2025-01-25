@@ -17,6 +17,7 @@
   home.homeDirectory = "/home/jack";
   home.stateVersion = "24.11";
   programs.home-manager.enable = true;
+  programs.bash.initExtra = ''PS1="\n\[\033[1;32m\][\[\e]0;\u@\h: \w\a\]\u@\h \W]\$\[\033[0m\] "'';
 
   systemd.user.targets.tray = {
     Unit = {

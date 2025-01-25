@@ -4,6 +4,9 @@
     event = "FileType";
     pattern = [
       "html"
+      "css"
+      "js"
+      "ts"
       "nix"
     ];
   }

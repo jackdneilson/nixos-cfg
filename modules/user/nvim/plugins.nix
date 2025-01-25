@@ -5,6 +5,7 @@
       nixd.enable = true;
       html.enable = true;
       emmet_ls.enable = true;
+      cssls.enable = true;
     };
   };
 
