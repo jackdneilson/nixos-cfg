@@ -54,4 +54,9 @@
     key = "<leader>fv";
     action = "<cmd>Yazi<CR>";
   }
+  {
+    mode = [ "n" "i" ];
+    key = "<C-f>";
+    action = "<cmd>lua require('conform').format({ async = true })<CR>";
+  }
 ]

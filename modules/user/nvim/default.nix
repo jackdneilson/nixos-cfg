@@ -14,8 +14,6 @@
     opts = import ./options.nix;
     keymaps = import ./keymaps.nix;
     plugins = import ./plugins.nix;
-    # extraConfigLua = ''
-    #   require('luasnip').setup({})
-    # '';
+    autoCmd = import ./autocmd.nix;
   };
 }

@@ -1,8 +1,12 @@
 {
   number = true;
   relativenumber = true;
-  tabstop = 2;
-  shiftwidth = 2;
-  softtabstop = 2;
+  tabstop = 4;
+  shiftwidth = 4;
+  softtabstop = 4;
   expandtab = true;
+  hlsearch = false;
+  incsearch = true;
+  smartindent = true;
+  smartcase = true;
 }
