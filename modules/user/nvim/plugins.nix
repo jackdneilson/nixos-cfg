@@ -111,4 +111,13 @@
       open_for_directories = true;
     };
   };
+
+  colorizer = {
+    enable = true;
+    settings.user_default_options = {
+      always_update = true;
+      css = true;
+      mode = "virtualtext";
+    };
+  };
 }
