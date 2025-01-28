@@ -9,6 +9,12 @@
     };
   };
 
+  rustaceanvim = {
+    enable = true;
+    # settings.server.default_settings.rust-analyzer.check.command = "cargo-clippy";
+    # settings.tools.enable_clippy = true;
+  };
+
   # indent-blankline.enable = true;
   lz-n.enable = true;
   nvim-surround.enable = true;
@@ -87,6 +93,7 @@
   telescope = {
     enable = true;
     extensions.fzf-native.enable = true;
+    extensions.file-browser.enable = true;
   };
 
   treesitter = {
@@ -103,13 +110,6 @@
       lsp_format = "fallback";
     };
     settings.default_format_opts.lsp_format = "fallback";
-  };
-
-  yazi = {
-    enable = true;
-    settings = {
-      open_for_directories = true;
-    };
   };
 
   colorizer = {

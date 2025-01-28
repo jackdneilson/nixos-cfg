@@ -3,9 +3,7 @@
     enable = true;
     defaultEditor = true;
     globals.mapleader = " ";
-    globals.loaded_netrwPlugin = 1;
-    globals.loaded_netrw = 1;
-    performance.byteCompileLua.enable = true;
+    # performance.byteCompileLua.enable = true;
     colorschemes.nightfox = {
       enable = true;
       flavor = "carbonfox";
