@@ -1,3 +1,4 @@
+# TODO: Add keys to individual plugins.
 {
   lsp = {
     enable = true;
@@ -13,20 +14,21 @@
     enable = true;
     # settings.server.default_settings.rust-analyzer.check.command = "cargo-clippy";
     # settings.tools.enable_clippy = true;
+    lazyLoad.settings.ft = [ ".rs" ".toml" ];
   };
 
   # indent-blankline.enable = true;
+  luasnip.enable = true;
   lz-n.enable = true;
   nvim-surround.enable = true;
-  undotree.enable = true;
   web-devicons.enable = true;
   nvim-autopairs.enable = true;
-  fugitive.enable = true;
   which-key.enable = true;
-  emmet.enable = true;
-
-  luasnip = {
+  fugitive.enable = true;
+  undotree.enable = true;
+  emmet = {
     enable = true;
+    autoLoad = false;
   };
 
   # Autocompletion

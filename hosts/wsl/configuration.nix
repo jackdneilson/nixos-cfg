@@ -8,7 +8,7 @@
   wsl.defaultUser = "jack";
   wsl.interop.includePath = false;
   wsl.wslConf.interop.enabled = false;
-  # wsl.wslConf.interop.appendWindowsPath = false;
+  wsl.wslConf.interop.appendWindowsPath = false;
 
   # wsl.wslConf.automount.disabled
 
