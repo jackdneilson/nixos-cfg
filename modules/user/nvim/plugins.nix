@@ -26,10 +26,7 @@
   which-key.enable = true;
   fugitive.enable = true;
   undotree.enable = true;
-  emmet = {
-    enable = true;
-    autoLoad = false;
-  };
+  emmet.enable = true;
 
   # Autocompletion
   cmp = {
