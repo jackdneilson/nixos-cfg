@@ -4,7 +4,7 @@
   imports = [
     ../../modules/user/nvim
     ../../modules/user/git
-    ../../modules/user/wezterm
+    ../../modules/user/alacritty
     ../../modules/user/rofi
     ../../modules/user/yazi
     ../../modules/user/polybar

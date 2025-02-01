@@ -8,7 +8,7 @@
     automount = true;
     settings = {
       program_options = {
-        file_manager = "${pkgs.wezterm}/bin/wezterm -e yazi";
+        file_manager = "${pkgs.alacritty}/bin/alacritty -e yazi";
       };
     };
   };
