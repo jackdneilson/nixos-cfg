@@ -6,34 +6,45 @@
       html.enable = true;
       emmet_ls.enable = true;
       cssls.enable = true;
-      ts_ls = {
-        enable = true;
-      };
+      ts_ls.enable = true;
+# TODO: Set up rust_analyzer
+      # rust_analyzer = {
+      #   enable = true;
+      #   installCargo = false;
+      #   installRustc = false;
+      # };
     };
   };
 
-  rustaceanvim = {
+  treesitter = {
     enable = true;
-    # settings.server.default_settings.rust-analyzer.check.command = "cargo-clippy";
-    # settings.tools.enable_clippy = true;
-    lazyLoad.settings.ft = [ ".rs" ".toml" ];
+    settings = {
+      highlight.enable = true;
+      # indent.enable = true;
+    };
   };
 
-  # indent-blankline.enable = true;
+  lint = {
+    enable = true;
+    lintersByFt = {
+      javascript = [
+        "eslint"
+      ];
+      # rust = [
+      #   "clippy"
+      # ];
+    };
+  };
+
+  conform-nvim = {
+    enable = true;
+    settings.format_on_save = {
+      lsp_format = "fallback";
+    };
+    settings.default_format_opts.lsp_format = "fallback";
+  };
+
   luasnip.enable = true;
-  lz-n.enable = true;
-  nvim-surround.enable = true;
-  web-devicons.enable = true;
-  nvim-autopairs.enable = true;
-  which-key.enable = true;
-  fugitive.enable = true;
-  undotree.enable = true;
-  emmet.enable = true;
-
-  neo-tree = {
-    enable = true;
-    filesystem.hijackNetrwBehavior = "open_current";
-  };
 
   # Autocompletion
   cmp = {
@@ -96,25 +107,24 @@
     };
   };
 
+  # indent-blankline.enable = true;
+  lz-n.enable = true;
+  nvim-surround.enable = true;
+  web-devicons.enable = true;
+  nvim-autopairs.enable = true;
+  which-key.enable = true;
+  fugitive.enable = true;
+  undotree.enable = true;
+  emmet.enable = true;
+
+  neo-tree = {
+    enable = true;
+    filesystem.hijackNetrwBehavior = "open_current";
+  };
+
   telescope = {
     enable = true;
     extensions.fzf-native.enable = true;
-  };
-
-  treesitter = {
-    enable = true;
-    settings = {
-      highlight.enable = true;
-      # indent.enable = true;
-    };
-  };
-
-  conform-nvim = {
-    enable = true;
-    settings.format_on_save = {
-      lsp_format = "fallback";
-    };
-    settings.default_format_opts.lsp_format = "fallback";
   };
 
   colorizer = {

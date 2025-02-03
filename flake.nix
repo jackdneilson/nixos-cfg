@@ -42,7 +42,6 @@
           ./hosts/common/nix
           ./hosts/common/packages
           ./hosts/wsl/configuration.nix
-          ./modules/system/rust
           nixos-wsl.nixosModules.wsl
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
