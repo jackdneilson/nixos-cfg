@@ -77,13 +77,13 @@
   }
   {
     mode = "n";
-    key = "<leader>fr";
-    action = "<cmd>Telescope file_browser<CR>";
+    key = "<leader>fv";
+    action = "<cmd>Neotree toggle<CR>";
   }
   {
     mode = "n";
-    key = "<leader>fv";
-    action = "<cmd>Telescope file_browser path=%:p:h select_buffer=true<CR>";
+    key = "<leader>fr";
+    action = "<cmd>Neotree toggle position=current<CR>";
   }
 
   # Formatting with require

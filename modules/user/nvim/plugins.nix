@@ -28,6 +28,11 @@
   undotree.enable = true;
   emmet.enable = true;
 
+  neo-tree = {
+    enable = true;
+    filesystem.hijackNetrwBehavior = "open_current";
+  };
+
   # Autocompletion
   cmp = {
     enable = true;
@@ -92,7 +97,6 @@
   telescope = {
     enable = true;
     extensions.fzf-native.enable = true;
-    extensions.file-browser.enable = true;
   };
 
   treesitter = {
