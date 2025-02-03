@@ -1,4 +1,3 @@
-# TODO: Add keys to individual plugins.
 {
   lsp = {
     enable = true;
@@ -7,6 +6,9 @@
       html.enable = true;
       emmet_ls.enable = true;
       cssls.enable = true;
+      ts_ls = {
+        enable = true;
+      };
     };
   };
 
